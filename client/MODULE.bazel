@@ -1,0 +1,11 @@
+module(
+    name = "client",
+    version = "1.0",
+)
+
+bazel_dep(name = "greeting", version="1.0", repo_name = "local_greeting")
+
+local_path_override(
+    module_name = "greeting",
+    path = "../greeting"
+)

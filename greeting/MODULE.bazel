@@ -1,0 +1,4 @@
+module(
+    name = "greeting",
+    version = "1.0",
+)
