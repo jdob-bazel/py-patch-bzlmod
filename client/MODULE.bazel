@@ -5,7 +5,11 @@ module(
 
 bazel_dep(name = "greeting", version="1.0", repo_name = "local_greeting")
 
-local_path_override(
+git_override(
     module_name = "greeting",
-    path = "../greeting"
+    remote = "https://github.com/jdob-bazel/py-bzlmod-lib-greeting.git",
+    commit = "f67db03fc395476a0755058739f0371e67988265",
+    patches = ["//:greeting.patch"],
+    patch_strip = 1,
 )
+
